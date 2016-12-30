@@ -1,0 +1,35 @@
+#include <iostream>
+#include "BSTMap.h"
+#include <string>
+#include <map>
+
+using namespace std;
+
+int main() {
+  map<int, int> test;
+  BSTMap<int, int> bsttest;
+
+  bsttest.insert(std::make_pair(1,1));
+  //cout << bsttest[1] << "\n";
+
+  bsttest.insert(std::make_pair(2,2));
+  bsttest.insert(std::make_pair(3,3));
+  bsttest.insert(std::make_pair(4,4));
+  bsttest.insert(std::make_pair(5,5));
+  bsttest.insert(std::make_pair(7,7));
+  bsttest.insert(std::make_pair(24,24));
+  bsttest.insert(std::make_pair(12,12));
+  bsttest.insert(std::make_pair(17,17));
+  bsttest.insert(std::make_pair(6,6));
+  bsttest.insert(std::make_pair(99,99));
+
+  for(auto i : bsttest) {
+    if(i.first != bsttest[i.first]) { cout << "--- FAILED SIMPLE ITERATOR AND BRACKET TEST ---\n"; }
+    else { cout << "TEST 1: SIMPLE ITERATOR AND BRACKET TEST --- PASSED ---\n"; }
+    //cout << bsttest[i.first] << "\n";
+  }
+
+
+  //cout << "Min: " << (bsttest.findMin(bsttest.returnRoot())) -> key  << " Max: " << (bsttest.findMax(bsttest.returnRoot())) -> key << "\n";
+}
+
